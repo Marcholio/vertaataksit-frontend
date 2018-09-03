@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import CompanyForm from './CompanyForm';
-import { UPDATE_COMPANY } from '../../actions';
+import { updateCompany } from '../../actions/adminActions';
 
 class Company extends React.Component {
   render() {
@@ -28,7 +28,7 @@ Company.propTypes = {
 
 const mapDispatchToProps = dispatch => ({
   submit: values => {
-    dispatch({ type: UPDATE_COMPANY, values });
+    dispatch(updateCompany(values));
   },
 });
 

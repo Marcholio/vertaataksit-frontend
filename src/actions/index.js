@@ -1,2 +1,0 @@
-export const GET_COMPANIES = 'GET_COMPANIES';
-export const UPDATE_COMPANY = 'UPDATE_COMPANY';
