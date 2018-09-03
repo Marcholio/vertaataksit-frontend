@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import Home from './containers/customer/Home';
 import Admin from './containers/admin/Admin';
@@ -31,4 +32,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect()(App);
