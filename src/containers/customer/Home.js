@@ -10,19 +10,11 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      from: '',
-      to: '',
-    };
+    this.state = {};
   }
 
   submit() {
-    if (
-      this.state.from &&
-      this.state.from !== '' &&
-      this.state.to &&
-      this.state.to !== ''
-    )
+    if (this.state.from && this.state.to)
       this.props.submit(this.state.from, this.state.to);
   }
 
@@ -31,15 +23,25 @@ class Home extends React.Component {
       <div>
         <GoogleAutoComplete
           types={['address']}
-          onPlaceSelected={place =>
-            this.setState({ from: place.formatted_address })
-          }
+          onPlaceSelected={place => {
+            this.setState({
+              from: {
+                lat: place.geometry.location.lat(),
+                lon: place.geometry.location.lng(),
+              },
+            });
+          }}
           componentRestrictions={{ country: 'fi' }}
         />
         <GoogleAutoComplete
           types={['address']}
           onPlaceSelected={place =>
-            this.setState({ to: place.formatted_address })
+            this.setState({
+              to: {
+                lat: place.geometry.location.lat(),
+                lon: place.geometry.location.lng(),
+              },
+            })
           }
           componentRestrictions={{ country: 'fi' }}
         />
