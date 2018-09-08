@@ -1,0 +1,33 @@
+#app {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/background.jpg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100%, 100%;
+  width: 100vw;
+  height: 100vh; }
+
+header h1 {
+  text-transform: uppercase;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  color: white; }
+
+@media only screen and (max-width: 1500px) {
+  #app {
+    background-size: 100%, 150%; } }
+
+@media only screen and (max-width: 1050px) {
+  #app {
+    background-size: 100%, 200%; } }
+
+@media only screen and (max-width: 750px) {
+  #app {
+    background-size: 100%, 250%; } }
+
+@media only screen and (max-width: 600px) {
+  #app {
+    background-size: 100%, 300%; } }
+
+@media only screen and (max-width: 400px) {
+  #app {
+    background-size: 100%, 350%; } }

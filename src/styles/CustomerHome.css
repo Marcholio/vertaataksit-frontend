@@ -1,0 +1,44 @@
+#customer-view {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  height: calc(100vh - 36px);
+  padding: 20em 0 20em 0; }
+  #customer-view p {
+    color: white;
+    margin-top: 0;
+    font-size: 16px; }
+  #customer-view input {
+    border-radius: 8px;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    padding: 4px;
+    margin: 16px;
+    border: 1px solid white;
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+    width: 25%; }
+    #customer-view input:focus {
+      outline: none; }
+  #customer-view #search-form * {
+    display: inline-block; }
+  #customer-view #search-form #search-button {
+    margin-left: 24px;
+    vertical-align: top;
+    margin-top: 16px; }
+
+.pac-container {
+  background: rgba(0, 0, 0, 0.2);
+  font-family: 'Raleway', sans-serif;
+  border-radius: 0 0 8px 8px;
+  border: none;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3); }
+
+.pac-item:nth-child(1) {
+  border-top: none; }
+
+.pac-item:hover {
+  background: rgba(0, 0, 0, 0.4);
+  cursor: pointer; }
+
+.pac-item * {
+  color: white; }

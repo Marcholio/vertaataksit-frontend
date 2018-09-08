@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { Button, List } from 'semantic-ui-react';
 
 import { getPrices } from '../../actions/customerActions';
+import '../../styles/CustomerHome.css';
 
 class Home extends React.Component {
   constructor(props) {
@@ -20,32 +21,48 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div>
-        <GoogleAutoComplete
-          types={['address']}
-          onPlaceSelected={place => {
-            this.setState({
-              from: place.formatted_address,
-            });
-          }}
-          componentRestrictions={{ country: 'fi' }}
-        />
-        <GoogleAutoComplete
-          types={['address']}
-          onPlaceSelected={place =>
-            this.setState({
-              to: place.formatted_address,
-            })
-          }
-          componentRestrictions={{ country: 'fi' }}
-        />
-        <Button
-          positive
-          onClick={() => this.submit()}
-          loading={this.props.loading}
-        >
-          Hae
-        </Button>
+      <div id="customer-view">
+        <p>
+          Vertaile helposti eri taksien hintoja ja valitse juuri sinulle sopivin
+        </p>
+        <div id="search-form">
+          <GoogleAutoComplete
+            types={['address']}
+            onPlaceSelected={place => {
+              this.setState({
+                from: place.formatted_address,
+              });
+            }}
+            componentRestrictions={{ country: 'fi' }}
+            placeholder={'Lähtöpaikka'}
+          />
+          <GoogleAutoComplete
+            types={['address']}
+            onPlaceSelected={place =>
+              this.setState({
+                to: place.formatted_address,
+              })
+            }
+            componentRestrictions={{ country: 'fi' }}
+            placeholder={'Määränpää'}
+          />
+          <Button
+            color="green"
+            onClick={() => this.submit()}
+            loading={this.props.loading}
+            disabled={
+              this.props.loading ||
+              !this.state.from ||
+              this.state.from === '' ||
+              !this.state.to ||
+              this.state.to === ''
+            }
+            id="search-button"
+            size="small"
+          >
+            Hae
+          </Button>
+        </div>
         <List>
           {this.props.prices.map(p => (
             <List.Item key={p.company}>
