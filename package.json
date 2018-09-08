@@ -7,6 +7,7 @@
     "immutable": "^3.8.2",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
+    "react-cookie-consent": "^1.7.0",
     "react-dom": "^16.4.2",
     "react-google-autocomplete": "^1.0.16",
     "react-redux": "^5.0.7",

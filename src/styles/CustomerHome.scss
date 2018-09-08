@@ -20,6 +20,7 @@
     background: rgba(0, 0, 0, 0.2);
     color: white;
     width: 25%;
+    max-width: 350px;
 
     &:focus {
       outline: none;
@@ -35,6 +36,19 @@
       margin-left: 24px;
       vertical-align: top;
       margin-top: 16px;
+    }
+  }
+
+  #price-list {
+    padding-top: 48px;
+
+    p {
+      display: inline-block;
+      margin: 8px;
+    }
+
+    .company {
+      font-weight: 700;
     }
   }
 }

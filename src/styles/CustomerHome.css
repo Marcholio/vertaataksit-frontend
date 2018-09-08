@@ -16,7 +16,8 @@
     border: 1px solid white;
     background: rgba(0, 0, 0, 0.2);
     color: white;
-    width: 25%; }
+    width: 25%;
+    max-width: 350px; }
     #customer-view input:focus {
       outline: none; }
   #customer-view #search-form * {
@@ -25,6 +26,13 @@
     margin-left: 24px;
     vertical-align: top;
     margin-top: 16px; }
+  #customer-view #price-list {
+    padding-top: 48px; }
+    #customer-view #price-list p {
+      display: inline-block;
+      margin: 8px; }
+    #customer-view #price-list .company {
+      font-weight: 700; }
 
 .pac-container {
   background: rgba(0, 0, 0, 0.2);

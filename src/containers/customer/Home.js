@@ -63,11 +63,11 @@ class Home extends React.Component {
             Hae
           </Button>
         </div>
-        <List>
+        <List id="price-list">
           {this.props.prices.map(p => (
             <List.Item key={p.company}>
               <List.Content>
-                <p>{p.company}</p>
+                <p className="company">{p.company}</p>
                 <p>{p.price.toFixed(2)} €</p>
               </List.Content>
             </List.Item>
