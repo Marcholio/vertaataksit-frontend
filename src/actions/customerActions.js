@@ -4,6 +4,6 @@ import Api from '../Api';
 export const getPrices = (from, to) => dispatch => {
   dispatch({ type: GET_PRICES });
   Api.getPrices({ from, to })
-    .then(() => dispatch({ type: GET_PRICES_COMPLETE }))
+    .then(res => dispatch({ type: GET_PRICES_COMPLETE, prices: res.prices }))
     .catch(err => dispatch({ type: GET_PRICES_FAILED, err }));
 };
