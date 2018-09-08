@@ -8,6 +8,11 @@ $overlay: rgba(0, 0, 0, 0.6);
   background-size: 100%, 100%;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
+
+  #content-wrapper {
+    height: calc(100% - 36px);
+  }
 }
 
 header h1 {
@@ -32,6 +37,11 @@ header h1 {
 @media only screen and (max-width: 750px) {
   #app {
     background-size: 100%, 250%;
+
+    header {
+      margin-top: 8px;
+      text-align: center;
+    }
   }
 }
 

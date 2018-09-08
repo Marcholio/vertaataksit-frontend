@@ -1,7 +1,7 @@
 #customer-view {
   text-align: center;
   font-family: 'Raleway', sans-serif;
-  height: calc(100vh - 36px);
+  height: 100%;
   padding: 20em 0 20em 0; }
   #customer-view p {
     color: white;
@@ -50,3 +50,34 @@
 
 .pac-item * {
   color: white; }
+
+@media only screen and (max-width: 750px) {
+  #customer-view {
+    padding: 1em 0 0 0; }
+    #customer-view > p {
+      width: 80%;
+      margin-left: 10%;
+      margin-top: 16px; }
+    #customer-view #search-form {
+      width: 80%;
+      margin-left: 10%;
+      text-align: center; }
+      #customer-view #search-form * {
+        display: block; }
+      #customer-view #search-form input {
+        width: 100%;
+        margin: 16px 0; }
+      #customer-view #search-form #search-button {
+        margin: 0 40%; }
+    #customer-view #price-list {
+      padding-top: 16px; }
+  .pac-container {
+    background: rgba(0, 0, 0, 0.8);
+    font-family: 'Raleway', sans-serif;
+    border-radius: 0 0 8px 8px;
+    border: none;
+    box-shadow: none; }
+  .pac-item {
+    font-size: 14px; }
+    .pac-item:nth-child(1) {
+      border-top: none; } }

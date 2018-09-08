@@ -24,6 +24,7 @@ class Home extends React.Component {
       <div id="customer-view">
         <p>
           Vertaile helposti eri taksien hintoja ja valitse juuri sinulle sopivin
+          vaihtoehto
         </p>
         <div id="search-form">
           <GoogleAutoComplete

@@ -18,7 +18,7 @@ class App extends Component {
           <header>
             <h1>Vertaa taksit</h1>
           </header>
-          <div>
+          <div id="content-wrapper">
             <Route exact path="/" component={Home} />
             <Route exact path="/admin" component={Admin} />
             <Route exact path="/admin/newcompany" component={Company} />
