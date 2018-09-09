@@ -6,6 +6,8 @@ import CookieConsent from 'react-cookie-consent';
 import Home from './containers/customer/Home';
 import Admin from './containers/admin/Admin';
 import Company from './containers/admin/Company';
+import Login from './containers/admin/Login';
+import PrivateRoute from './PrivateRoute';
 
 import 'semantic-ui-css/semantic.min.css';
 import './styles/App.css';
@@ -20,8 +22,9 @@ class App extends Component {
           </header>
           <div id="content-wrapper">
             <Route exact path="/" component={Home} />
-            <Route exact path="/admin" component={Admin} />
-            <Route exact path="/admin/newcompany" component={Company} />
+            <Route exact path="/login" component={Login} />
+            <PrivateRoute exact path="/admin" component={Admin} />
+            <PrivateRoute exact path="/admin/newcompany" component={Company} />
           </div>
           <CookieConsent
             buttonText="Selvä!"
