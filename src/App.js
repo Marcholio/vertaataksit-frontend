@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import CookieConsent from 'react-cookie-consent';
+import PropTypes from 'prop-types';
 
 import Home from './containers/customer/Home';
 import Admin from './containers/admin/Admin';
@@ -23,8 +24,18 @@ class App extends Component {
           <div id="content-wrapper">
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
-            <PrivateRoute exact path="/admin" component={Admin} />
-            <PrivateRoute exact path="/admin/newcompany" component={Company} />
+            <PrivateRoute
+              exact
+              path="/admin"
+              component={Admin}
+              authenticated={this.props.authenticated}
+            />
+            <PrivateRoute
+              exact
+              path="/admin/newcompany"
+              component={Company}
+              authenticated={this.props.authenticated}
+            />
           </div>
           <CookieConsent
             buttonText="Selvä!"
@@ -44,4 +55,12 @@ class App extends Component {
   }
 }
 
-export default connect()(App);
+App.propTypes = {
+  authenticated: PropTypes.bool.isRequired,
+};
+
+const mapStateToProps = state => ({
+  authenticated: state.admin.get('authenticated'),
+});
+
+export default connect(mapStateToProps)(App);

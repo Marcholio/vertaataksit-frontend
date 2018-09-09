@@ -23,7 +23,12 @@ const LoginForm = props => (
         placeholder="********"
       />
     </div>
-    <Button positive type="submit">
+    <Button
+      positive
+      type="submit"
+      disabled={props.loading}
+      loading={props.loading}
+    >
       Kirjaudu sisään
     </Button>
   </form>
@@ -31,6 +36,7 @@ const LoginForm = props => (
 
 LoginForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
 };
 
 export default reduxForm({ form: 'login' })(LoginForm);
