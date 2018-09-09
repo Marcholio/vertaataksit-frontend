@@ -1,0 +1,18 @@
+#login-page {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  height: 100%;
+  padding: 20em 0 20em 0; }
+  #login-page input {
+    border-radius: 8px;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    padding: 4px;
+    margin: 16px;
+    border: 1px solid white;
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+    width: 25%;
+    max-width: 350px; }
+    #login-page input:focus {
+      outline: none; }

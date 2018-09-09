@@ -6,10 +6,12 @@ import { Redirect } from 'react-router-dom';
 import LoginForm from './LoginForm';
 import { login } from '../../actions/adminActions';
 
+import '../../styles/Login.css';
+
 class Login extends React.Component {
   render() {
     return (
-      <div>
+      <div id="login-page">
         {!this.props.authenticated ? (
           <LoginForm
             onSubmit={this.props.submit}

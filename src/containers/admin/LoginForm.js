@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 const LoginForm = props => (
   <form onSubmit={props.handleSubmit}>
-    <div>
+    <div id="login-form">
       <label htmlFor="username">Käyttäjänimi</label>
       <Field
         name="username"
