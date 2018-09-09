@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import CookieConsent from 'react-cookie-consent';
 import PropTypes from 'prop-types';
@@ -22,20 +22,22 @@ class App extends Component {
             <h1>Vertaa taksit</h1>
           </header>
           <div id="content-wrapper">
-            <Route exact path="/" component={Home} />
-            <Route exact path="/login" component={Login} />
-            <PrivateRoute
-              exact
-              path="/admin"
-              component={Admin}
-              authenticated={this.props.authenticated}
-            />
-            <PrivateRoute
-              exact
-              path="/admin/newcompany"
-              component={Company}
-              authenticated={this.props.authenticated}
-            />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/login" component={Login} />
+              <PrivateRoute
+                exact
+                path="/admin"
+                component={Admin}
+                authenticated={this.props.authenticated}
+              />
+              <PrivateRoute
+                exact
+                path="/admin/newcompany"
+                component={Company}
+                authenticated={this.props.authenticated}
+              />
+            </Switch>
           </div>
           <CookieConsent
             buttonText="Selvä!"
